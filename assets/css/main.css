@@ -41,6 +41,8 @@
 /* Common used full colors Colors -  */
 :root {
   --preloader-background-color: #eaf5f4;
+  --custom-cursor-background-color: #674CEF;
+  --custom-cursor-second-background-color: #674CEF;
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -143,6 +145,46 @@ h6 {
   100% {
     transform: rotate(360deg);
   }
+}
+/*--------------------------------------------------------------
+# Custom Cursor
+--------------------------------------------------------------*/
+.custom-cursor__cursor {
+  width: 25px;
+  height: 25px;
+  border-radius: 100%;
+  border: 1px solid var(--custom-cursor-background-color, #674CEF);
+  -webkit-transition: all 200ms ease-out;
+  transition: all 200ms ease-out;
+  position: fixed;
+  pointer-events: none;
+  left: 0;
+  top: 0;
+  transform: translate(calc(-50% + 5px), -50%);
+  z-index: 999991;
+}
+.custom-cursor__cursor-two {
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  background-color: var(--custom-cursor-background-color, #674CEF);
+  opacity: 0.3;
+  position: fixed;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  -webkit-transition: width 0.3s, height 0.3s, opacity 0.3s;
+  transition: width 0.3s, height 0.3s, opacity 0.3s;
+  z-index: 999991;
+}
+.custom-cursor__hover {
+  background-color: var(#674CEF, #674CEF);
+  opacity: 0.4;
+}
+.custom-cursor__innerhover {
+  width: 25px;
+  height: 25px;
+  opacity: 0.4;
 }
 
 /*--------------------------------------------------------------
