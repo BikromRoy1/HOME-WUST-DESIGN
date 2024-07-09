@@ -54,6 +54,7 @@
   --footer-background-color-copyright: #353688;
   --footer-text-color: #c5c5cf;
   --section-heading-color: #444444;
+  --section-common-background-color: #eeeef5;
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -138,7 +139,12 @@ h6 {
   font-weight: 400;
   line-height: 0;
 }
-
+/*--------------------------------------------------------------
+# Common section background style------------------------------------------------
+--------------------------------------------------------------*/
+.section-background {
+  background-color: var(--section-common-background-color);
+}
 /*--------------------------------------------------------------
 # Custom Cursor
 --------------------------------------------------------------*/
@@ -1268,9 +1274,7 @@ section,
 /*--------------------------------------------------------------
 # Features Section
 --------------------------------------------------------------*/
-.features {
-  background-color: #f8fbfc;
-}
+
 .features .nav-tabs {
   border: 0;
 }
@@ -1393,102 +1397,128 @@ section,
 /*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
-.services .service-item {
-  background-color: var(--surface-color);
-  border: 1px solid color-mix(in srgb, var(--default-color), transparent 85%);
-  height: 100%;
-  padding: 30px;
-  transition: 0.3s;
-  border-radius: 10px;
-  display: flex;
+.services {
+  overflow: visible;
+  margin-bottom: 200px;
+  background: #B7D8EF !important;
 }
-
-.services .service-item .icon {
-  font-size: 32px;
-  border-radius: 10px;
+.services .services-carousel-wrap {
   position: relative;
-  margin-right: 25px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 72px;
-  height: 72px;
-  flex-shrink: 0;
+  margin-bottom: -200px;
+}
+.services .swiper-wrapper {
+  height: auto;
+}
+.services .service-item {
+  position: relative;
+  overflow: hidden;
+}
+.services .service-item:before {
+  content: '';
+  background-color: color-mix(
+    in srgb,
+    var(--background-color),
+    transparent 50%
+  );
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1;
+  transition: 0.3s all ease;
+}
+.services .service-item img {
+  transition: 0.5s all ease;
+  transform: scale(1);
 }
 
-.services .service-item h3 {
-  color: color-mix(in srgb, var(--heading-color), transparent 25%);
-  font-weight: 700;
-  font-size: 22px;
-  transition: 0.3s;
+.services .service-item .service-item-contents {
+  z-index: 9;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  right: 20px;
+  transition: 0.3s all ease;
+  transform: translateY(100%);
+  opacity: 0;
+  visibility: hidden;
+}
+.services .service-item .service-item-contents .service-item-category {
+  color: var(--accent-color);
+  text-transform: uppercase;
 }
 
-.services .service-item p {
+.services .service-item .service-item-contents .service-item-title {
+  color: var(--contrast-color);
   margin-bottom: 0;
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  transition: 0.3s;
+}
+.services .service-item:hover:before {
+  opacity: 1;
+  visibility: visible;
 }
 
-.services .service-item .read-more {
-  display: inline-flex;
-  align-items: center;
-  margin-top: 10px;
-  transition: 0.3s;
-  font-size: 14px;
+.services .service-item:hover .service-item-contents {
+  transform: translateY(0%);
+  opacity: 1;
+  visibility: visible;
 }
 
-.services .service-item .read-more i {
-  margin-left: 10px;
+.services .service-item:hover img {
+  transform: scale(1.2);
 }
 
-.services .service-item.item-cyan .icon {
-  color: #0dcaf0;
-  border: 1px solid #0dcaf0;
-  background: rgba(13, 202, 240, 0.1);
+.services .navigation-prev,
+.services .navigation-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 9;
+  width: 46px;
+  height: 46px;
+  background: var(--contrast-color);
+  background-color: none;
+  border: none;
+  transition: 0.3s all ease;
+}
+.services .navigation-prev i,
+.services .navigation-next i {
+  font-size: 2rem;
 }
 
-.services .service-item.item-orange .icon {
-  color: #fd7e14;
-  border: 1px solid #fd7e14;
-  background: rgba(253, 126, 20, 0.1);
+.services .navigation-prev:hover,
+.services .navigation-next:hover {
+  background-color: var(--primaryColor);
+  color: var(--contrast-color);
 }
-
-.services .service-item.item-teal .icon {
-  color: #20c997;
-  border: 1px solid #20c997;
-  background: rgba(32, 201, 151, 0.1);
+.services .navigation-prev {
+  left: 10px;
 }
-
-.services .service-item.item-red .icon {
-  color: #df1529;
-  border: 1px solid #df1529;
-  background: rgba(223, 21, 4, 0.1);
+.services .navigation-next {
+  right: 10px;
 }
-
-.services .service-item.item-indigo .icon {
-  color: #6610f2;
-  border: 1px solid #6610f2;
-  background: rgba(102, 16, 242, 0.1);
+.services .swiper {
+  padding-bottom: 50px;
 }
-
-.services .service-item.item-pink .icon {
-  color: #f3268c;
-  border: 1px solid #f3268c;
-  background: rgba(243, 38, 140, 0.1);
+.services .swiper-pagination {
+  bottom: 0px;
 }
-
-.services .service-item:hover {
-  box-shadow: 0px 2px 25px rgba(0, 0, 0, 0.1);
+.services .swiper-pagination .swiper-pagination-bullet {
+  border-radius: 9999px;
+  width: 12px;
+  height: 12px;
+  background-color: color-mix(
+    in srgb,
+    var(--background-color),
+    transparent 80%
+  ) !important;
+  opacity: 1;
 }
-
-.services .service-item:hover h3 {
-  color: var(--heading-color);
+.services .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: var(--primaryColor) !important;
 }
-
-.services .service-item:hover p {
-  color: color-mix(in srgb, var(--default-color), transparent 10%);
-}
-
 /*--------------------------------------------------------------
 # More Features Section
 --------------------------------------------------------------*/
