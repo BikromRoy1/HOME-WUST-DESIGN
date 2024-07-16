@@ -16,11 +16,12 @@
   --main-fontFamily: 'Inter', sans-serif;
   --heading-fontFamily: 'Work Sans', sans-serif;
   --heading-fontFamily2: 'Alfa Slab One', serif;
+  --section-title-fontFamily: 'Montserrat', sans-serif;
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
-  --primaryColor: #7768e5; /* Background color for the entire website, including individual sections */
+  --primaryColor: #353688; /* Background color for the entire website, including individual sections */
   --secondaryColor: #7768e5; /* Default color used for the majority of the text content across the entire website */
   --blackColor: #0d0d25; /* Color for headings, subheadings and title throughout the website */
   --paragraphColor: #525271;
@@ -35,7 +36,8 @@
 :root {
   --nav-color: #313336; /* The default color of the main navmenu links */
   --top-header-color: #e8e8f4;
-  --top-header-left-color: #7768e5;
+  /* --top-header-left-color: #7768e5; */
+  --top-header-left-color: #353688;
   --nav-hover-color: #77b6ca; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
@@ -120,11 +122,12 @@ h6 {
 }
 .section-warp h2 {
   color: var(--blackColor);
-  font-family: Var(--heading-fontFamily2);
+  font-family: Var(--section-title-fontFamily);
   font-size: 32px;
   letter-spacing: 1.28px;
-  font-weight: 400;
+  font-weight: 800;
   margin-bottom: 0;
+  text-transform: capitalize;
 }
 .section-warp .section-link {
   color: var(--primaryColor);
@@ -872,41 +875,6 @@ h6 {
   }
 }
 
-/*--------------------------------------------------------------
-# Global Page Titles & Breadcrumbs
---------------------------------------------------------------*/
-.page-title {
-  --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
-  color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 25px 0;
-  position: relative;
-}
-
-.page-title h1 {
-  font-size: 24px;
-  font-weight: 700;
-}
-
-.page-title .breadcrumbs ol {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  font-size: 14px;
-}
-
-.page-title .breadcrumbs ol li + li {
-  padding-left: 10px;
-}
-
-.page-title .breadcrumbs ol li + li::before {
-  content: '/';
-  display: inline-block;
-  padding-right: 10px;
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
 
 /*--------------------------------------------------------------
 # Global Sections
@@ -965,12 +933,13 @@ section,
   text-transform: uppercase;
 }
 .section-title h3 {
-  font-family: var(--heading-fontFamily2);
+  font-family: var(--section-title-fontFamily);
   color: var(--blackColor);
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 800;
   line-height: 1.4;
-  letter-spacing: 1.28px;
+  letter-spacing: 1.12px;
+  text-transform: capitalize;
 }
 /*--------------------------------------------------------------
 # Hero Section
@@ -1070,14 +1039,15 @@ section,
   right: 6px;
 }
 .hero h2 {
-  font-size: 60px;
-  font-weight: 400;
+  font-size: 58px;
+  font-weight: 800;
   margin-bottom: 26px;
-  line-height: 75px;
+  line-height: 70px;
   animation: fadeInDown 1s both;
-  font-family: var(--heading-fontFamily2);
+  font-family: var(--section-title-fontFamily);
   color: var(--whiteColor);
-  letter-spacing: 2.4px;
+  letter-spacing: 2.1px;
+  text-transform: capitalize;
 }
 .hero .carousel-container .default-btn.style2 {
   background-color: transparent;
@@ -1306,129 +1276,6 @@ section,
 }
 
 /*--------------------------------------------------------------
-# Features Section
---------------------------------------------------------------*/
-
-.features .nav-tabs {
-  border: 0;
-}
-
-.features .nav-item {
-  width: 100%;
-  margin-bottom: 15px;
-}
-
-.features .nav-item:last-child {
-  margin-bottom: 0;
-}
-
-.features .nav-link {
-  color: var(--heading-color);
-  border: 0;
-  padding: 30px;
-  transition: 0.3s;
-  border-radius: 10px;
-  display: flex;
-  cursor: pointer;
-}
-
-.features .nav-link i {
-  background-color: var(--surface-color);
-  color: var(--accent-color);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-  width: 48px;
-  height: 48px;
-  font-size: 22px;
-  flex-shrink: 0;
-  border-radius: 50px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.features .nav-link h4 {
-  font-size: 20px;
-  font-weight: 600;
-  margin: 0 0 10px 0;
-  transition: 0.3s;
-}
-
-.features .nav-link p {
-  font-size: 15px;
-  margin: 0;
-}
-
-.features .nav-link:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 96%);
-}
-
-.features .nav-link.active {
-  background: color-mix(in srgb, var(--accent-color), transparent 96%);
-  color: var(--default-color);
-}
-
-.features .tab-pane img {
-  border-radius: 15px;
-}
-
-/*--------------------------------------------------------------
-# Features Details Section
---------------------------------------------------------------*/
-.features-details .features-item + .features-item {
-  margin-top: 60px;
-}
-
-.features-details .features-item .content {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
-  color: color-mix(in srgb, var(--default-color), transparent 40%);
-  padding: 30px;
-  border-radius: 10px;
-}
-
-.features-details .features-item h3 {
-  font-weight: 700;
-  font-size: 26px;
-  margin-bottom: 15px;
-}
-
-.features-details .features-item .more-btn {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
-  padding: 6px 30px;
-  border-radius: 6px;
-}
-
-.features-details .features-item .more-btn:hover {
-  background-color: color-mix(in srgb, var(--accent-color), transparent 20%);
-}
-
-.features-details .features-item ul {
-  list-style: none;
-  padding: 0;
-}
-
-.features-details .features-item ul li {
-  padding-bottom: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.features-details .features-item ul li:last-child {
-  padding-bottom: 0;
-}
-
-.features-details .features-item ul i {
-  font-size: 20px;
-  margin-right: 10px;
-  color: var(--accent-color);
-}
-
-.features-details .features-item img {
-  border-radius: 15px;
-}
-
-/*--------------------------------------------------------------
 # Services Section
 --------------------------------------------------------------*/
 .services {
@@ -1500,10 +1347,10 @@ section,
 }
 .services .service-item .service-item-contents .content h2 {
   color: var(--blackColor);
-  font-family: var(--heading-fontFamily2);
+  font-family: var(--section-title-fontFamily);
   font-size: 23px;
-  font-weight: 400;
-  letter-spacing: 1.28px;
+  font-weight: 800;
+  letter-spacing: 1.08px;
   margin-bottom: 20px;
 }
 .services .service-item .service-item-contents .content p {
@@ -1675,10 +1522,10 @@ section,
 }
 .why-choose .content h3 {
   color: var(--blackColor);
-  font-family: var(--heading-fontFamily2);
+  font-family: var(--section-title-fontFamily);
   font-size: 32px;
-  font-weight: 400;
-  letter-spacing: 1.28px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
   margin-bottom: 20px;
 }
 .why-choose .content .text {
@@ -2023,9 +1870,25 @@ section,
   height: 0%;
   width: 0%;
   transition: 0.6s;
-  background: rgba(255, 255, 255, 0.2);
-  -webkit-backdrop-filter: blur(12px);
-  backdrop-filter: blur(12px);
+  background-color: rgba(0, 24, 132, 0.5);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+}
+.campus .gallery-item .icons {
+  position: absolute;
+  right: 2%;
+  z-index: 999;
+  font-size: 24px;
+  color: var(--contrast-color);
+  bottom: 2%;
+}
+.campus .gallery-item .copy-icons {
+  position: absolute;
+  left: 2%;
+  z-index: 999;
+  font-size: 23px;
+  color: var(--contrast-color);
+  bottom: 2%;
 }
 
 .campus .gallery-item .optional-content {
@@ -2034,14 +1897,27 @@ section,
   left: 0;
   right: 0;
   transform: translateY(-50%);
-  color: var(--whiteColor);
-  font-family: var(--heading-fontFamily);
-  font-size: 22px;
   transition: 0.6s;
-  font-weight: 700;
   opacity: 0;
   text-align: center;
   z-index: 999;
+}
+.campus .gallery-item .optional-content h4 {
+  color: var(--whiteColor);
+  font-family: var(--heading-fontFamily);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 1px;
+}
+.campus .gallery-item .optional-content i {
+  color: var(--contrast-color);
+  font-size: 22px;
+}
+.campus .gallery-item .optional-content span {
+  color: #f2fcfe;
+  font-family: var(--heading-fontFamily);
+  text-transform: uppercase;
+  font-size: 14px;
 }
 .campus .gallery-item:hover::before {
   height: 100%;
