@@ -21,7 +21,7 @@
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
 :root {
-  --primaryColor: #353688; /* Background color for the entire website, including individual sections */
+  --primaryColor: #7768e5; /* Background color for the entire website, including individual sections */
   --secondaryColor: #7768e5; /* Default color used for the majority of the text content across the entire website */
   --blackColor: #0d0d25; /* Color for headings, subheadings and title throughout the website */
   --paragraphColor: #525271;
@@ -175,6 +175,35 @@ h6 {
   font-size: 22px;
   font-weight: 400;
   line-height: 0;
+}
+/*--------------------------------------------------------------
+# Default Links Button css
+--------------------------------------------------------------*/
+.button-link {
+  display: block;
+  color: var(--primaryColor);
+  font-weight: 600;
+  font-family: var(--heading-fontFamily);
+}
+.button-link i {
+  position: relative;
+  left: 2px;
+  top: 4px;
+  font-size: 20px;
+}
+.button-link span {
+  position: relative;
+}
+.button-link span::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  width: 100%;
+  transition: 0.6s;
+  background-color: var(--primaryColor);
 }
 /*--------------------------------------------------------------
 # Common section background style------------------------------------------------
@@ -875,7 +904,6 @@ h6 {
   }
 }
 
-
 /*--------------------------------------------------------------
 # Global Sections
 --------------------------------------------------------------*/
@@ -1139,10 +1167,17 @@ section,
 
 .hero .carousel-indicators li {
   cursor: pointer;
-  height: 7px;
+  width: 13px;
+  height: 13px;
   transition: 0.6s;
-  width: 7px;
+  border-radius: 99999px !important;
+  border-top: 0px !important;
+  border-bottom: 0px !important;
+  background-color: #fff;
 }
+/* .hero .carousel-indicators .active {
+  background-color: var(--primaryColor);
+} */
 
 @keyframes fadeInUp {
   from {
@@ -1192,7 +1227,7 @@ section,
 }
 
 .about .content h3 {
-  font-size: 22px;
+  font-size: 26px;
   font-weight: 600;
   font-family: var(--heading-fontFamily);
   margin-bottom: 20px;
@@ -1202,7 +1237,7 @@ section,
 
 .about .content p {
   color: var(--paragraphColor);
-  margin-bottom: 25px;
+  margin-bottom: 5px;
   font-weight: 400;
   line-height: 27px;
   font-size: 16px;
@@ -1219,6 +1254,7 @@ section,
 .about .content .graduate {
   gap: 20px;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 .about .content .graduate h4 {
   color: var(--blackColor);
@@ -1260,14 +1296,14 @@ section,
   padding: 20px 40px;
   max-width: 90%;
   transition: 0.3s;
-  opacity: 0.5;
-  filter: grayscale(100);
+  /* opacity: 0.5;
+  filter: grayscale(100); */
 }
 
-.clients .client-logo img:hover {
+/* .clients .client-logo img:hover {
   filter: none;
   opacity: 1;
-}
+} */
 
 @media (max-width: 640px) {
   .clients .client-logo img {
@@ -1464,25 +1500,15 @@ section,
 /*--------------------------------------------------------------
 # why choose Section
 --------------------------------------------------------------*/
+.why-choose {
+  overflow: hidden;
+}
 .why-choose .program-images {
   padding-left: 35px;
 }
 .why-choose .program-images .image {
   margin-right: -5px;
 }
-/* .reveal2::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  z-index: 2;
-  background: var(--whiteColor);
-  transition: 0.9s;
-  border-radius: 0;
-} */
 .why-choose .program-images .logo-content {
   background-color: var(--primaryColor);
   position: relative;
@@ -1579,6 +1605,76 @@ section,
   position: relative;
   transition: 0.6s;
   top: 3px;
+}
+
+.why-choose .program-images .big-image {
+  overflow: hidden;
+  position: relative;
+}
+
+.why-choose .program-images .big-image img {
+  transition: 0.6s;
+}
+
+.why-choose .program-images .big-image::before {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 50%;
+  transition: 0.6s;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  transform: skewX(-25deg);
+}
+
+.program-images:hover .big-image::before {
+  animation: shine 0.75s;
+}
+
+.why-choose .program-images:hover .big-image img {
+  transform: scale(1.1);
+}
+
+.why-choose .program-images .image {
+  overflow: hidden;
+  position: relative;
+}
+
+.why-choose .program-images .image img {
+  transition: 0.6s;
+}
+
+.why-choose .program-images .image::before {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 50%;
+  transition: 0.6s;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  transform: skewX(-25deg);
+}
+
+.program-images:hover .image::before {
+  animation: shine 0.75s;
+}
+
+.why-choose .program-images:hover .image img {
+  transform: scale(1.1);
 }
 /*--------------------------------------------------------------
 # news Section
@@ -1837,14 +1933,14 @@ section,
   padding: 10px 30px;
   max-width: 90%;
   transition: 0.3s;
-  opacity: 0.5;
-  filter: grayscale(100);
+  /* opacity: 0.5;
+  filter: grayscale(100); */
 }
 
-.certified .certified-logo img:hover {
+/* .certified .certified-logo img:hover {
   filter: none;
   opacity: 1;
-}
+} */
 
 @media (max-width: 640px) {
   .certified .certified-logo img {
