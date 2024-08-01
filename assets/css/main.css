@@ -57,6 +57,13 @@
   --footer-text-color: #c5c5cf;
   --section-heading-color: #444444;
   --section-common-background-color: #eeeef5;
+  --mobile-slider-background-color: linear-gradient(
+    25deg,
+    #0078e0,
+    #1b94e3,
+    #1cb1e5,
+    #00cee7
+  );
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -1291,17 +1298,100 @@ section,
     transform: translate3d(0, 0, 0);
   }
 }
-/* .slider-image-mb {
+.mobile-image {
   display: none !important;
 }
-@media (max-width: 480px) {
-  .slider-image {
+@media (min-width: 416px) and (max-width: 450px) {
+  .desktop-image {
     display: none !important;
   }
-  .slider-image-mb {
+  .mobile-image {
+    width: 100% !important;
+    height: 230px !important;
+    object-fit: cover !important;
     display: block !important;
   }
-} */
+  .hero .carousel {
+    width: 100%;
+    min-height: calc(100vh - 411px);
+  }
+  .hero .carousel {
+    background-image: var(--mobile-slider-background-color);
+  }
+}
+@media (min-width: 395px) and (max-width: 415px) {
+  .desktop-image {
+    display: none !important;
+  }
+  .mobile-image {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .hero .carousel {
+    width: 100%;
+    min-height: calc(100vh - 380px);
+  }
+  .hero .carousel {
+    background-image: var(--mobile-slider-background-color);
+  }
+}
+@media (min-width: 390px) and (max-width: 394px) {
+  .desktop-image {
+    display: none !important;
+  }
+  .mobile-image {
+    width: 100% !important;
+    height: 205px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .hero .carousel {
+    width: 100%;
+    min-height: calc(100vh - 360px);
+  }
+  .hero .carousel {
+    background-image: var(--mobile-slider-background-color);
+  }
+}
+@media (min-width: 375px) and (max-width: 389px) {
+  .desktop-image {
+    display: none !important;
+  }
+  .mobile-image {
+    width: 100% !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .hero .carousel {
+    width: 100%;
+    min-height: calc(100vh - 190px);
+  }
+  .hero .carousel {
+    background-image: var(--mobile-slider-background-color);
+  }
+}
+
+@media (min-width: 360px) and (max-width: 374px) {
+  .desktop-image {
+    display: none !important;
+  }
+  .mobile-image {
+    width: 100% !important;
+    height: 190px !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+  .hero .carousel {
+    width: 100%;
+    min-height: calc(100vh - 230px);
+  }
+  .hero .carousel {
+    background-image: var(--mobile-slider-background-color);
+  }
+}
 
 @media only screen and (max-width: 991px) {
   .hero .information {
