@@ -768,6 +768,7 @@ h6 {
 # Global Footer
 --------------------------------------------------------------*/
 .footer {
+  border-top: 3px solid var(--primaryColor);
   color: var(--default-color);
   background-color: var(--footer-background-color);
   font-size: 14px;
@@ -2469,7 +2470,7 @@ section,
 # campus overview Section
 --------------------------------------------------------------*/
 .campus {
-  padding: 10px 0px;
+  padding: 0px 0px;
 }
 .campus .gallery-item {
   position: relative;
