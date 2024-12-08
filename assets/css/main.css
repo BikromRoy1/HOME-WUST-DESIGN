@@ -2541,3 +2541,42 @@ section,
 .campus .gallery-item:hover .optional-content {
   opacity: 1;
 }
+
+/*--------------------------------------------------------------
+# Stats WUST part 02
+--------------------------------------------------------------*/
+.stats-second {
+  padding-top: 20px;
+}
+.stats-second .stats-second-heading h4 {
+  text-align: center;
+  font-size: 23px;
+  font-weight: 600;
+  font-family: var(--heading-fontFamily);
+  margin-bottom: 30px;
+  text-transform: capitalize;
+  color: var(--primaryColor);
+  line-height: 30px;
+}
+.stats-second .graduate {
+  gap: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.stats-second .graduate h4 {
+  color: var(--blackColor);
+  font-family: var(--heading-fontFamily2);
+  font-size: 40px;
+  letter-spacing: 1.6px;
+  line-height: 1;
+}
+.stats-second .graduate h6 {
+  color: var(--paragraphColor);
+  font-family: var(--main-fontFamily);
+  font-weight: 400;
+  font-size: 14px;
+  letter-spacing: 1.4px;
+  line-height: 1.8;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
